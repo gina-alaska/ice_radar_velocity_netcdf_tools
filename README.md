@@ -5,7 +5,7 @@ Provided here are some tools used to convert the UAF Sea Ice Radar data from mat
 * `average_to_netcdf.mt` -	Simple script to generate average file.
 * `template.nc` -	Template netcdf file used as a starting point for geo referencing
 
-### Steps for using the tools here
+### Notes on the steps used to generate the tools.
 
 Make netcdf template
 ```
