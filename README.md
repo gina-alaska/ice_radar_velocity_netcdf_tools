@@ -8,10 +8,10 @@ _Developer caveat note: Scripts written in matlab because it seemed simplest way
 There are three types of data to be converted into respective NetCDF:
 * average data set - u and v velocity vector
   * data time comes from matlab filename
-* divergence and sheer - contains (?)
-  * data includes a time component  (todo: not handled correctly yet)
+* divergence and sheer - contains (todo: insert short summary here)
+  * data includes a time component  (todo: not handled correctly yet - coming soon)
 * flow - u and v vector 
-  *  data includes a time component (todo: not handled correctly yet)
+  *  data includes a time component (todo: not handled correctly yet - comming soon)
 
 Tools used to convert the UAF Sea Ice Radar data from matlab output format into a NetCDF container.  Provided are two files:
 
