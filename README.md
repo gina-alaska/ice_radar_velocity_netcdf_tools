@@ -4,8 +4,15 @@ Provided here are some tools used to convert the UAF Sea Ice Radar data from mat
 
 * `average_to_netcdf.mt` -	Simple script to generate average file.
 * `template.nc` -	Template netcdf file used as a starting point for geo referencing
+* `div_shr_to_netcdf.mt` - simple script to generate div/shear file  
+* `flow_to_netcdf.mt` - simple script to generate flow file
 
-(insert fuller description here)
+Run them like this:
+
+ ./ice_radar_velocity_netcdf_tools/flow_to_netcdf.mt ice_radar_velocity_netcdf_tools/template.nc flow_20140419_10_20_1_10_phys_filt_med.mat test2/flow_20140419_10_20_1_10_phys_filt_med.nc
+./ice_radar_velocity_netcdf_tools/div_shr_to_netcdf.mt ice_radar_velocity_netcdf_tools/template.nc  20140419_div_shr.mat test2/20140419_div_shr.nc
+./ice_radar_velocity_netcdf_tools/average_to_netcdf.mt ice_radar_velocity_netcdf_tools/template.nc 20140419_average.mat test2/20140419_average.nc
+
 
 ## Usage
 
