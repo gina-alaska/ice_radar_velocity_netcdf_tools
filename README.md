@@ -1,6 +1,17 @@
+
 ## Ice Radar Velocity converstion to netcdf tools
 
-Provided here are some tools used to convert the UAF Sea Ice Radar data from matlab output format into a NetCDF container.  Provided are two files:
+Goal: Convert the matlab formatted radar data and convert to a NetCDF for long term archiving and use by modelers.
+
+There are three types of data to be converted into respective NetCDF:
+* average data set - u and v velocity vector
+  * data time comes from matlab filename
+* divergence and sheer - contains (?)
+  * data includes a time component  (todo: not handled correctly yet)
+* flow - u and v vector 
+  *  data includes a time component (todo: not handled correctly yet)
+
+Tools used to convert the UAF Sea Ice Radar data from matlab output format into a NetCDF container.  Provided are two files:
 
 * `average_to_netcdf.mt` -	Simple script to generate average file.
 * `template.nc` -	Template netcdf file used as a starting point for geo referencing
@@ -9,10 +20,11 @@ Provided here are some tools used to convert the UAF Sea Ice Radar data from mat
 
 Run them like this:
 
- ./ice_radar_velocity_netcdf_tools/flow_to_netcdf.mt ice_radar_velocity_netcdf_tools/template.nc flow_20140419_10_20_1_10_phys_filt_med.mat test2/flow_20140419_10_20_1_10_phys_filt_med.nc
+```
+./ice_radar_velocity_netcdf_tools/flow_to_netcdf.mt ice_radar_velocity_netcdf_tools/template.nc flow_20140419_10_20_1_10_phys_filt_med.mat test2/flow_20140419_10_20_1_10_phys_filt_med.nc
 ./ice_radar_velocity_netcdf_tools/div_shr_to_netcdf.mt ice_radar_velocity_netcdf_tools/template.nc  20140419_div_shr.mat test2/20140419_div_shr.nc
 ./ice_radar_velocity_netcdf_tools/average_to_netcdf.mt ice_radar_velocity_netcdf_tools/template.nc 20140419_average.mat test2/20140419_average.nc
-
+```
 
 ## Usage
 
