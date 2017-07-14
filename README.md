@@ -20,6 +20,8 @@ Tools used to convert the UAF Sea Ice Radar data from matlab output format into 
 * `div_shr_to_netcdf.mt` - simple script to generate div/shear file  
 * `flow_to_netcdf.mt` - simple script to generate flow file
 
+## Usage
+
 Run them like this:
 
 ```
@@ -27,10 +29,6 @@ Run them like this:
 ./ice_radar_velocity_netcdf_tools/div_shr_to_netcdf.mt ice_radar_velocity_netcdf_tools/template.nc  20140419_div_shr.mat test2/20140419_div_shr.nc
 ./ice_radar_velocity_netcdf_tools/average_to_netcdf.mt ice_radar_velocity_netcdf_tools/template.nc 20140419_average.mat test2/20140419_average.nc
 ```
-
-## Usage
-
-(insert usage details here)
 
 ### Notes from process followed when developing the tools above:
 
