@@ -3,6 +3,8 @@
 
 Goal: Convert the matlab formatted radar data and convert to a NetCDF for long term archiving and use by modelers.
 
+_Developer caveaot note: Scripts written in matlab because it seemed simplest way to read matlab files.  For others more familiar with matlab programming and dataformats there are likely easier ways to do this conversion._
+
 There are three types of data to be converted into respective NetCDF:
 * average data set - u and v velocity vector
   * data time comes from matlab filename
@@ -53,3 +55,6 @@ ncatted -O -a grid_mapping,u,c,c,"azimuthal_equidistant" x.nc
 ncatted -O -a grid_mapping,v,c,c,"azimuthal_equidistant" x.nc
 ```
 Clean up time arrays
+
+
+## 
