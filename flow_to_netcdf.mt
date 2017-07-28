@@ -8,19 +8,29 @@ arg_list = argv();
 template = arg_list{1}
 infile = arg_list{2};
 outfile = arg_list{3};
+omask = arg_list{4};
+rmask = arg_list{5};
 
 #print some info
 printf("Converting %s to %s using %s as a template\n", infile, outfile,template);
 
 #load data
 load(infile);
+load(omask);
+load(rmask);
+
+#mask data
+u_dims = size(u);
+v_dims = size(v);
+rmask = repmat(rmask, 1,1,u_dims(3));
+omask = repmat(omask, 1,1,u_dims(3));
+u(rmask & omask) = NaN;
+v(rmask & omask) = NaN;
 
 #copy template
 system(sprintf("cp %s %s", template, outfile));
 
 #populate netcdf file
-u_dims = size(u);
-v_dims = size(v);
 nccreate(outfile, 'u', 'Dimensions',{'r',u_dims(1),'c',u_dims(2),'v',u_dims(3)}, 'Format', 'netcdf4_classic');
 nccreate(outfile, 'v', 'Dimensions',{'r',v_dims(1),'c',v_dims(2),'v',v_dims(3)}, 'Format', 'netcdf4_classic');
 ncwrite(outfile,'u',flipud(u));
